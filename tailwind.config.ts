@@ -7,10 +7,33 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "15px",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1400px",
+    },
+    fontFamily: {
+      owald: "var(--font-oswald)",
+      roboto: "var(--font-roboto)",
+    },
+    backgroundImage: {
+      hero: "url(/assets/img/hero/bg.png)",
+      membership: "url(/assets/img/membership/bg.jpg)",
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "#333",
+          100: "#484848",
+          200: "#151515",
+          300: "#111",
+        },
+        accent: "#d4000d",
       },
     },
   },
