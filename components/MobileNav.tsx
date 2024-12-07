@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Link as ScrollLink } from 'react-scroll'
@@ -20,17 +19,14 @@ const links = [
 
 ]
 
-const MobileNav = ({ containerStyles }: { containerStyles: string }) => {
-  const [openNav, setOpenNav] = useState(false);
+const MobileNav = ({ containerStyles, handleLinkClick }: { containerStyles: string, handleLinkClick: () => void }) => {
   const isMobile = useMediaQuery({
     query: '(max-width: 640px)',
   })
 
-  const handleLinkClick = () => {
-    setOpenNav(false); // Ẩn navbar khi click vào link
-  };
+  
   return (
-    <nav className={`${containerStyles} ${openNav ? 'visible' : 'hidden'}`}>
+    <nav className={`${containerStyles}`}>
       {links.map((link, index) => {
         return (
           <ScrollLink

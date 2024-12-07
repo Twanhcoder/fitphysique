@@ -11,6 +11,10 @@ const Header = () => {
   const [headerActive, setHeaderActice] = useState(false);
   const [openNav, setOpenNav] = useState(false)
 
+  const handleLinkClick = () => {
+    setOpenNav(false); // Ẩn navbar khi click vào link
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setHeaderActice(window.scrollY > 50);
@@ -31,7 +35,7 @@ const Header = () => {
           <Image src={'/assets/img/logo.png'} width={117} height={55} alt='' /></Link>
         <MobileNav containerStyles={` ${headerActive ? 'top-[90px]' : 'top-[124px]'} 
           ${openNav ? 'max-h-max pt-8 pb-10 border-t border-white/10' : 'max-h-0 pt-0 pb-0 overflow-hidden border-white/0'} 
-          flex flex-col text-center gap-8 fixed bg-primary-200 w-full left-0 text-base uppercase font-medium text-white xl:hidden`} />
+          flex flex-col text-center gap-8 fixed bg-primary-200 w-full left-0 text-base uppercase font-medium text-white xl:hidden`} handleLinkClick={handleLinkClick} />
         <Nav containerStyles='flex gap-4 text-white text-base uppercase font-medium transition-all hidden xl:flex' />
 
         <div className='flex items-center gap-4'>
